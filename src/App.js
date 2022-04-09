@@ -7,6 +7,7 @@ import Relay from "./pages/Relay/Relay";
 import Censor from "./pages/Censor/Censor";
 import Wifi from "./pages/Wifi/Wifi";
 import CensorSetting from "./pages/Censor/CensorSetting";
+import RelaySetting from "./pages/Relay/RelaySetting";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Route path="/relay" element={<Relay />} />
           <Route path="/censor" element={<Censor />} />
           <Route path="/wifi" element={<Wifi />} />
-          <Route path="/censor-setting" element={<CensorSetting />} />
+          <Route path="/censor-setting" element={<CensorSetting/>} />
+          <Route path="/relay-setting" element={<RelaySetting />} />
         </Route>
       </Routes>
     </BrowserRouter>

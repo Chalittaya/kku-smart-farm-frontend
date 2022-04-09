@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import "./censor.scss";
+import { useNavigate } from "react-router-dom";
 
 const censorItems = [
   {
@@ -16,12 +16,12 @@ const censorItems = [
   },
 ];
 
-// let navigate = useNavigate();
-// const goToSetting = () => {
-//   navigate("/censor-setting");
-// };
-
 const Censor = () => {
+  const navigate = useNavigate();
+  const goToSetting = () => {
+    navigate("/censor-setting");
+  };
+
   return (
     <div className="censor">
       <div className="censor__item__header">ตั้งค่าเซ็นเซอร์</div>
@@ -33,7 +33,7 @@ const Censor = () => {
               <div className="censor__item__body">เซ็นเซอร์ {item.index} :</div>
               <div className="censor__item__body">{item.name}</div>
             </div>
-            <button  className="censor__button">
+            <button className="censor__button" onClick={goToSetting}>
               ตั้งค่า
             </button>
           </div>

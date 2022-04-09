@@ -1,16 +1,36 @@
 import "./censor.scss";
+import { useNavigate } from "react-router-dom";
+
+const censorSettingItems = [
+  {
+    index: 1,
+    name: "อุณหภูมิ (เซสเซียส)",
+  },
+  {
+    index: 2,
+    name: "ความชื้น (เปอร์เซ็นต์)",
+  },
+  {
+    index: 3,
+    name: "ความชื้นดิน (เปอร์เซ็นต์)",
+  },
+];
 
 const CensorSetting = () => {
+  let navigate = useNavigate();
+  const goBack = () => {
+    navigate("/censor");
+  };
   return (
-    <div className="censor">
-      <div className="censor__grid">
-        <div className="censor__header">ตั้งค่า Wifi</div>
-        <div className="censor__setiing__box">
-          <div className="censor__item">ชื่อ wifi</div>
+    <div className="censor__setting">
+      <div className="censor__setting__grid">
+        <div className="censor__item__header">เพิ่มการตั้งค่าอุณหภูมิ</div>
+        <div className="censor__setting__box">
+          <div className="censor__item__body">อุณหภูมิ (เซสเซียส)</div>
           <input type="text" id="name" name="name"></input>
-          <div className="censor__item">ทำงาน (นาที)</div>
+          <div className="censor__item__body">ทำงาน (นาที)</div>
           <input type="text" id="password" name="password"></input>
-          <div className="censor__setiing__grid">
+          <div className="censor__setting__grid">
             <label className="container">
               รีเลย์ 1<input type="checkbox"></input>
               <span className="checkmark"></span>
@@ -29,7 +49,9 @@ const CensorSetting = () => {
             </label>
           </div>
         </div>
-        <button className="wifi__button">บันทึก</button>
+        <button className="censor__button" onClick={goBack}>
+          บันทึก
+        </button>
       </div>
     </div>
   );
