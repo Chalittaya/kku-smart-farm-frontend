@@ -50,7 +50,7 @@ const Sidebar = () => {
   useEffect(() => {
     const curPath = window.location.pathname.split("/")[1];
     const activeItem = sidebarNavItems.findIndex(
-      (item) => item.section === curPath
+      (item) => curPath.startsWith(item.section)
     );
     setActiveIndex(curPath.length === 0 ? 0 : activeItem);
   }, [location]);

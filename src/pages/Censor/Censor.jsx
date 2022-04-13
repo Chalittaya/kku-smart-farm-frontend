@@ -5,21 +5,24 @@ const censorItems = [
   {
     index: 1,
     name: "อุณหภูมิ",
+    unit: "เซลเซียส",
   },
   {
     index: 2,
     name: "ความชื้น",
+    unit: "เปอร์เซ็นต์",
   },
   {
     index: 3,
     name: "ความชื้นดิน",
+    unit: "เปอร์เซ็นต์",
   },
 ];
 
 const Censor = () => {
   const navigate = useNavigate();
-  const goToSetting = () => {
-    navigate("/censor-setting");
+  const goToSetting = (title, unit) => {
+    navigate("/censor-setting", { state: { title: title, unit: unit } });
   };
 
   return (
@@ -33,7 +36,10 @@ const Censor = () => {
               <div className="censor__item__body">เซ็นเซอร์ {item.index} :</div>
               <div className="censor__item__body">{item.name}</div>
             </div>
-            <button className="censor__button" onClick={goToSetting}>
+            <button
+              className="censor__button"
+              onClick={() => goToSetting(item.name, item.unit)}
+            >
               ตั้งค่า
             </button>
           </div>

@@ -18,7 +18,7 @@ function App() {
           <Route path="/relay" element={<Relay />} />
           <Route path="/censor" element={<Censor />} />
           <Route path="/wifi" element={<Wifi />} />
-          <Route path="/censor-setting" element={<CensorSetting/>} />
+          <Route path="/censor-setting" element={<CensorSetting />} />
           <Route path="/relay-setting" element={<RelaySetting />} />
         </Route>
       </Routes>
